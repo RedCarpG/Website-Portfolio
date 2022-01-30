@@ -1,0 +1,8 @@
+/* @import "./css/responsive.css"; */
+/* @import "./css/style.css"; */
+
+
+@import "./tailwindcss/cover-page.css";
+@import "./tailwindcss/main-style.css";  
+/* @import "./tailwindcss/home.css";   */
+@import "./tailwindcss/tailwind.css";

@@ -1,0 +1,21 @@
+@layer components {
+
+    .tw-footer {
+        @apply 
+        tw-flex tw-justify-center tw-flex-col tw-content-center tw-items-center
+        tw-pt-10 tw-pb-20 tw-gap-28
+        tw-bg-zinc-800 tw-text-white;
+    }
+    
+    .tw-banner {
+        @apply tw-relative tw-table tw-text-left tw-h-full tw-w-full
+        after:tw-content-[''] after:tw-bg-black 
+        after:tw-absolute after:tw-top-0 after:tw-bottom-0 after:tw-left-0 after:tw-right-0
+        after:tw-z-0
+        after:tw-opacity-0;
+    }
+
+    .tw-button {
+        @apply tw-bg-red-600 tw-text-gray-50 tw-text-xl tw-px-8 tw-py-4 tw-rounded-2xl tw-cursor-pointer;
+    }
+}
