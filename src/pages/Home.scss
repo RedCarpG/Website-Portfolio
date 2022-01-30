@@ -1,39 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
 body {
-    background-color: rgba(0, 0, 0, 0.404);
+    background-color: rgb(231, 231, 231);
+}
+#home {
+    // height: 400vh;
+    section {
+        // height: 100vh;
+        // position: relative;
+        background-color: black;
+    }
+    #trigger {
+        height: 1000vh;
+    }
+
+    .animation {
+        h1 {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            font-family: 'Open Sans Condensed', sans-serif;
+            text-align: center;
+        }
+        
+        svg {
+            
+            position: fixed;
+            margin: auto auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .svg-mount4, .svg-mount3,
+        .svg-mount2, .svg-mount1 {
+            width: 100%;
+            height: auto;
+            top: 100vh;
+            bottom: auto;
+    
+        }
+    }
+
+    
+
+    .arrow {
+        background-color: aqua;
+        animation: jump 1s infinite alternate;
+    }
+
+
 }
 
-#home {
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    position: fixed;
+    top: 100vh;
+    gap: 2em;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    color: rgb(244 244 245);
+    height: 50vh;
+    background-color: rgb(63 63 70);
 
-    section {
-        height: 100vh;
-        position: relative;
-    }
-    .svg-back1, .svg-back2,
-    .svg-front1, .svg-front2,
-    .svg-sun {
-        
-        position: fixed;
-        margin: auto auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-    .svg-back1, .svg-back2,
-    .svg-front1, .svg-front2 {
-        // width: 100%;
-    }
-    .svg-back2 {
-        // top: 100vh;
-        width: 100vw;
-
+    h2 {
+        font-size: 2rem;
     }
 
-    .heading {
-        height: 977px;
-    
-        .intro {
-             color: white;
+    .icon {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        flex-direction: row;
+        a {
+            font-size: 2em;
+            height: auto;
+            width: auto;
         }
-    }}
+    }
+}
+
+@keyframes jump {
+    from { opacity: 0;};
+    to { opacity: 1; };
+}
