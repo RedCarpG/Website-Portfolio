@@ -1,0 +1,72 @@
+{
+    "work": [
+        {
+            "id": "Intellinium",
+            "fullname": [
+                "Project: Human behavior detection on constrained embedded devices with IMU sensor based on distributed ",
+                "Machine Learning and Finite State Machine"
+            ],
+            "title": "Machine Learning & Software Engineer Intern",
+            "description": [
+                "Developed IMU sensor API of ISM330DHCX, with the purpose of data acquisition from",
+                "accelerometer, gyroscope and magnetometer sensors on a Zephyr RTOS on nRF5340 board",
+                "(C language); Accomplished data visualization with seaborn, data set management with",
+                "Pandas and Numpy (Python); Used Tensorflow and Tensorflow Lite Micro to design and",
+                "generate machine learning model and implemented it onto the embedded board. (from Python to C++)."
+            ],
+            "startDate": "April 2021",
+            "endDate": "October 2021",
+            "location": "Aix-en-Provence, Bouches-du-Rhône, France"
+        }
+    ],
+    "project": [
+        {
+            "id": "Technical Project",
+            "sup": "Polytech Nantes",
+            "fullname": [
+                "Project: Multi-Dimensional Aesthetic Assessment of Mobile Game Image (Tencent)"
+            ],
+            "description": [
+                "Aesthetics quality assessment (AQA) of mobile game images with the help of Machine",
+                "Learning, using readapted and designed multi-task framework capable of taking arbitrary size",
+                "input data. The module is mainly designed with libaraies of Tensorflow and Karas."
+            ],
+            "startDate": "October 2020",
+            "endDate": "March 2021",
+            "location": "Nantes, Loire-Atlantique, France"
+        },
+        {
+            "id": "Multidisciplinary Project",
+            "sup": "Polytech Nantes",
+            "fullname": [
+                "Project: Secure remote control for cruise ship Victoria"
+            ],
+            "description": [
+                "Arduino programmed modules, communicated by WiFi & BT protocols, along with screen",
+                "display module and communication of data taken from the boat."
+            ],
+            "startDate": "October 2019",
+            "endDate": "June 2020",
+            "location": "Nantes, Loire-Atlantique, France"
+        }
+
+    ],
+    "education": [
+        {
+            "id": "Polytech Nantes",
+            "title": "Master Degree",
+            "fullname": "Graduate School of Engineering of the Polytech Nantes",
+            "startDate": "September 2019",
+            "endDate": "October 2021",
+            "location": "Nantes, Loire-Atlantique, France"
+        }, 
+        {
+            "id": "OUC",
+            "title": "Bachelor degree",
+            "fullname": "Ocean University of China",
+            "startDate": "September 2015",
+            "endDate": "Jun 2019",
+            "location": "Qingdao, Shandong, China"
+        }
+    ]
+}
