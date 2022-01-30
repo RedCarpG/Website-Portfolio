@@ -1,0 +1,171 @@
+#about {
+    --left_size: 30vw;
+
+    --mainColor: white;
+    --secondaryColor: rgb(248 113 113);
+
+    .resume {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 120vh;
+    
+        padding-top: 0;
+        padding-bottom: 20vh;
+        button {
+            
+            transition-duration: .2s;
+            &:hover {
+                transform: scale(105%);
+            }
+        }
+    }
+    .work,
+    .education,
+    .project {
+        padding: 3rem;
+        padding-top: 6rem;
+        padding-left: var(--left_size);
+        padding-right: 5vw;
+        display: flex;
+        flex-direction: column;
+
+        transition-duration: .5s;
+        gap: 2rem;
+        > h1 {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: -1em;
+                width: .5em;
+                height: .03em;
+                
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+                // border-radius: 100%;
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: -.5em;
+                width: .25em;
+                height: .25em;
+                background: rgb(255, 255, 255, .3);
+                border: .05em solid white;
+                box-shadow: 0 0 .5em white;
+                border-radius: 50%;
+            }
+        }
+
+        section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            position: relative;            
+            
+            .id {
+                color: var(--secondaryColor);
+                font-size: 3rem;
+                line-height: 2.5rem;
+                margin-bottom: 1rem;
+                font-weight: bolder;
+                span {
+                    
+                    font-size: 1.25rem;
+                    font-weight: lighter;
+                }
+            }
+            .title {
+                font-size: 1.5rem;
+                line-height: 2rem;
+                margin-bottom: .5rem;
+            }
+            .description {
+                margin-top: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .project,
+            .fullname {    
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+            .bottom {
+                padding-right: 3rem;
+                margin-right: 1rem;
+                margin-bottom: 7rem;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                > * {
+                    margin-right: 1rem;
+                    font-style: italic;
+                    text-align: right;
+                }
+            }
+        }
+    
+    }
+
+    .sideNavBar {
+        --normalColor: white;
+        --focusColor: var(--secondaryColor);
+        opacity: 0;
+        transition-duration: .5s;
+        visibility: hidden;
+        justify-content: start;
+        width: calc(var(--left_size) - 7vh);
+        padding-right: 2vw;
+
+        > ul {
+            --offsetHeight: 6vh;
+            top: 30vh;
+
+            > li {
+                h1 {
+                    border-radius: 1em;
+                    background: linear-gradient(90deg, rgba(255,255,255,0) 16%, rgba(0,0,0,1) 100%);
+                }
+
+                ul {
+                    li {
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+
+                &.focus {
+                    h1 {                         
+
+                        // box-shadow: 0 0 .5em white;
+
+                    }
+                }
+            }
+        }
+        &.show {
+            visibility: visible;
+            opacity: 1;
+        }   
+    }
+}
+
+@keyframes slideIn {
+    0% { 
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    25% { 
+        opacity: 0;
+    }
+    100% { opacity: 1;}
+}

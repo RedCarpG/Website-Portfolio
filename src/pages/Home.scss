@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(0, 0, 0, 0.404);
+}
+
+#home {
+
+    section {
+        height: 100vh;
+        position: relative;
+    }
+    .svg-back1, .svg-back2,
+    .svg-front1, .svg-front2,
+    .svg-sun {
+        
+        position: fixed;
+        margin: auto auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .svg-back1, .svg-back2,
+    .svg-front1, .svg-front2 {
+        // width: 100%;
+    }
+    .svg-back2 {
+        // top: 100vh;
+        width: 100vw;
+
+    }
+
+    .heading {
+        height: 977px;
+    
+        .intro {
+             color: white;
+        }
+    }}
