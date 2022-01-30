@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
 import './Layout.scss'
@@ -23,7 +22,6 @@ export default function Layout() {
             <Navbar onClickConatct={onClickConatct} />
             <Outlet />
             <Contact switchVisibleCb={setContactVisibleCb}/>
-            {/* <Footer /> */}
         </>
     )
 }
