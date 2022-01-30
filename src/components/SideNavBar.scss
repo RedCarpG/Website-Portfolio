@@ -1,0 +1,120 @@
+.sideNavBar {
+    --normalSize: 1.7rem;
+    --focusSize: 2.5rem;
+    --normalColor: white;
+    --focusColor: red;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    a {
+        pointer-events: auto;
+    }
+
+    > ul {
+        --offset: 0;
+        --offsetHeight: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        position: relative;
+        
+        transition-duration: .5s;
+        transform: translateY(calc(-1 * var(--offset) * var(--offsetHeight)));
+        
+        > li {
+            --opacity: 1;
+            --size: 100%;
+
+            width: 100%;
+            margin-bottom: 1em;
+
+            transition-duration: .5s;
+            opacity: var(--opacity);
+            transform-origin: right center;
+            transform: scale(var(--size));
+            h1 {
+                font-size: var(--normalSize);
+                color: var(--normalColor);
+                line-height: 1.7em;
+                padding-right: 1.5rem;
+
+                margin-bottom: .2rem;
+                z-index: 10;
+
+                transition-duration: .5s;
+                &:hover {
+                    transform: scale(105%);
+                    color: var(--focusColor);
+                }
+            }
+
+            ul {
+                z-index: 0;
+                flex-direction: column;
+                line-height: 2em;
+                padding-right: 2em;
+
+                display: none;
+                transition: 1s;
+                opacity: 0;
+                li {
+                    transition-duration: .2s;
+                    &:hover {
+                        transform: scale(105%);
+                    }
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        > li.focus {
+            h1 {
+                position: relative;
+                font-size: var(--focusSize);
+                color: var(--focusColor);
+                
+            }
+            ul {
+                display: flex;
+                animation: slideIn .5s forwards;
+            }
+        }
+        
+    }
+
+    .time-line {
+        &::before {
+            content: "";
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: .1em;
+            height: 90vh;
+            background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(0,0,0,0) 100%);
+            border-radius: 100%;
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% { 
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    25% { 
+        opacity: 0;
+    }
+    100% { opacity: 1;}
+}

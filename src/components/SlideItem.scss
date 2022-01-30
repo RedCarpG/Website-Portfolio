@@ -1,0 +1,46 @@
+
+.slide-item { 
+    
+    & > * {
+        opacity: 0; 
+        height: inherit;
+    }
+
+}
+
+.slide-up {
+    
+    & > * {
+        animation: slide-up .5s forwards;
+        animation-delay: .2s;
+    }
+}
+.slide-down {
+    
+    & > * {
+        animation: slide-down .5s forwards;
+        animation-delay: .2s;
+    }
+}
+
+@keyframes slide-up {
+    from { 
+        opacity: 0; 
+        // transform: translateY(50%); 
+    }
+    to { 
+        opacity: 1; 
+        // transform: translateY(0); 
+    }
+}
+
+@keyframes slide-down {
+    from { 
+        opacity: 1; 
+        // transform: translateY(50%); 
+    }
+    to { 
+        opacity: 0; 
+        // transform: translateY(0); 
+    }
+}
