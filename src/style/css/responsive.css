@@ -1,0 +1,92 @@
+/******************************************
+    Version: 1.0
+/****************************************** */
+
+@media only screen and (min-width: 1199px) {
+
+	html {
+		font-size: 35px;
+	}
+	#mainNav {
+		font-size: 25px
+	}
+
+	.slide-window {
+    	--slide-size: 45vw;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+	html {
+		font-size: 35px;
+	}
+	#mainNav {
+		font-size: 25px
+	}
+	.slide-window {
+    	--slide-size: 55vw;
+	}
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+	html {
+		font-size: 25px;
+	}
+
+	#mainNav {
+		font-size: 20px
+	}
+	#experience-page .sideNavBar {
+		display: none;
+	}
+	#experience-page {
+    	--left_size: 10vw;
+	}
+
+	.slide-window {
+    	--slide-size: 60vw;
+	}
+
+}
+@media (min-width: 600px) and (max-width: 767px) {
+
+	html {
+		font-size: 20px;
+	}
+	#mainNav {
+		font-size: 15px
+	}
+	#experience-page .sideNavBar {
+		display: none;
+	}
+	#experience-page {
+    	--left_size: 10vw;
+	}
+	
+	.slide-window {
+    	--slide-size: 70vw;
+	}
+}
+@media (min-width: 280px) and (max-width: 599px) {
+
+	html {
+		font-size: 15px;
+	}
+
+	#mainNav {
+		font-size: 10px
+	}
+	#experience-page .sideNavBar {
+		display: none;
+	}
+	#experience-page {
+    	--left_size: 10vw;
+	}
+
+
+	.slide-window {
+    	--slide-size: 70vw;
+	}
+}
