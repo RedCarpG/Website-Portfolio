@@ -1,0 +1,104 @@
+.slide-window {
+    --slide-size: 50vw;
+
+    position: relative;
+    width: 100vw;
+    max-height: 85vh;
+    min-height: 65vh;
+
+    .window {
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 95%;
+        scroll-snap-type: inline mandatory;
+
+        .slide-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            opacity: .2;
+            filter: blur(5px);
+
+            min-width: var(--slide-size);
+            padding: 1em;
+            scroll-snap-align: center;
+
+            transition: .5s;
+            &:nth-child(1){
+                min-width: calc((100vw - var(--slide-size)) / 2);
+            }
+            &:last-child{
+                min-width: calc((100vw - var(--slide-size)) / 2);
+            }
+            &.active {
+                filter: none;
+                opacity: 1;
+            }
+        }
+        &::-webkit-scrollbar {
+            height: 0rem;
+        }
+    }
+    > button {
+        cursor: pointer;
+        font-size: 3rem;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: auto;
+
+        top: 0;
+        bottom: 0;
+
+        margin: auto auto;
+
+        transition: .2s;
+        &.right {
+            right: 5%;
+        }
+        &.left {
+            left: 5%;
+        }
+        > svg {
+            color: rgb(255, 255, 255);
+            // background-color: rgba(0, 0, 0, 0.9);
+            // border-radius: 1em;
+        }
+        &.hide {
+            display: none;
+        }
+        &:hover {
+            transform: scale(150%);
+        }
+    }
+
+    > ul.index {
+        margin: 1%;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        align-items: center;
+        > li {
+            width: .5em;
+            height: .5em;
+            border: .15em solid white;
+            border-radius: 1em;
+            &.active {
+
+                background-color: white;
+            }
+        }
+    }
+}
