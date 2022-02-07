@@ -11,6 +11,13 @@ This is my personally designed Portfolio website.
 ![img](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/WebsitePortfolio.png?raw=true)
 ![img](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/WebsitePortfolio2.png?raw=true)
 
+Compatability:
+
+Tested on:
+
+- **`Chrome`**
+- **`Microsoft Edge`**
+
 ## 🔮 Overview of the files
 
 -----------------------------
