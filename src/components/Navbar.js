@@ -23,8 +23,8 @@ export default function Navbar({ onClickConatct }) {
     }, [contactActive, onClickConatct])
 
     return (
-        <nav id='mainNav' className='tw-bg-zinc-800 tw-text-white tw-bg-opacity-30' >
-            <div className='tw-container tw-text-lg'> PENG GAO </div>
+        <nav id='mainNav' className='' >
+            <div className='tw-container tw-text-lg'> GAO PENG </div>
             <div className='tw-container tw-flex tw-justify-end tw-gap-3'>
                 <button className='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
                     Menu
@@ -34,8 +34,8 @@ export default function Navbar({ onClickConatct }) {
                     <li className={getActivePage("home")}>
                         <Link to="/" onClick={()=>{onClickPage("home")}}> Home </Link>
                     </li>
-                    <li className={getActivePage("about")}>
-                        <Link to="/about"  onClick={()=>{onClickPage("about")}}> About </Link>
+                    <li className={getActivePage("experience")}>
+                        <Link to="/experience"  onClick={()=>{onClickPage("experience")}}> Experience </Link>
                     </li>
                     <li className={getActivePage("project")}>
                         <Link to="/project" onClick={()=>{onClickPage("project")}}> 

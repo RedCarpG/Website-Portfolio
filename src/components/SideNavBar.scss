@@ -1,9 +1,8 @@
 .sideNavBar {
-    --normalSize: 1.7rem;
-    --focusSize: 2.5rem;
     --normalColor: white;
     --focusColor: red;
 
+    font-size: .8rem;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -29,6 +28,7 @@
         transform: translateY(calc(-1 * var(--offset) * var(--offsetHeight)));
         
         > li {
+            transform-origin: right center;
             --opacity: 1;
             --size: 100%;
 
@@ -37,15 +37,16 @@
 
             transition-duration: .5s;
             opacity: var(--opacity);
-            transform-origin: right center;
             transform: scale(var(--size));
+
             h1 {
-                font-size: var(--normalSize);
+                transform-origin: right center;
+                font-size: 1.2em;
                 color: var(--normalColor);
                 line-height: 1.7em;
-                padding-right: 1.5rem;
+                padding-right: 1em;
 
-                margin-bottom: .2rem;
+                margin-bottom: .2em;
                 z-index: 10;
 
                 transition-duration: .5s;
@@ -58,8 +59,9 @@
             ul {
                 z-index: 0;
                 flex-direction: column;
-                line-height: 2em;
-                padding-right: 2em;
+                font-size: .7em;
+                line-height: 1.5em;
+                padding-right: 1em;
 
                 display: none;
                 transition: 1s;
@@ -80,7 +82,7 @@
         > li.focus {
             h1 {
                 position: relative;
-                font-size: var(--focusSize);
+                font-size: 1.5em;
                 color: var(--focusColor);
                 
             }
@@ -100,7 +102,7 @@
             top: 0;
             bottom: 0;
             right: 0;
-            width: .1em;
+            width: .1rem;
             height: 90vh;
             background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(0,0,0,0) 100%);
             border-radius: 100%;
