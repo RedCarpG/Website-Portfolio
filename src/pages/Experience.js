@@ -1,9 +1,8 @@
 import React, { useRef, useState } from 'react'
-import './About.scss'
-import ScrollWindow from '../components/ScrollWindow'
-import experienceJson from '../assets/experience.json'
+import './Experience.scss'
+import ScrollWindow, { ScrollItem } from '../components/ScrollWindow'
+import experienceJson from '../assets/json/experience.json'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
-import SlideItem from '../components/SlideItem'
 import SideNavBar from '../components/SideNavBar'
 
 function InfoCard({ info }) {
@@ -12,21 +11,29 @@ function InfoCard({ info }) {
             <p className='id'> {info.id} 
                 <span className='tw-text-zinc-300'>{info.sup && ` - ${info.sup}`}</span> 
             </p>
-            {info.fullname && <p className='fullname tw-text-zinc-400'> {info.fullname} </p>}
-            {info.title && <p className='title'> {info.title} </p>}
+            {info.fullname && <p className='fullname'> {info.fullname} </p>}
+            {info.title && <p className='title tw-text-zinc-400'> {info.title} </p>}
             {info.project && <p className='project'> {info.project} </p>}
+            
+            {info.skill && 
+            <ul className='skill'>
+                {info.skill.map((item, index) => {
+                    return <li key={index}>{item}</li>
+                })}
+            </ul>
+            }
             
             {/* {info.description && <p className='description'> {info.description} </p>} */}
 
             <div className='bottom'>
-                {info.startDate && <p className='period'> {`${info.startDate} - ${info.endDate}`} </p>}
-                {info.location && <p className='location'> {info.location} </p>}
+                {info.startDate && <p className='period tw-text-zinc-400'> {`${info.startDate} - ${info.endDate}`} </p>}
+                {info.location && <p className='location tw-text-zinc-400'> {info.location} </p>}
             </div>
         </section>
     )
 }
 
-export default function About() {
+export default function Experience() {
 
     const resume = useRef(null)
     const work = useRef(null)
@@ -37,112 +44,105 @@ export default function About() {
 
     /** Callback function for current Scrolling in / focused Element */
     function scrollItemInCb(scrollItem) {
-        scrollItem.childNodes.forEach((child) => {
-            switch (child) {
-                case resume.current: {
-                    setShowNavBar(false)
-                    break
-                }
-                case work.current: {
-                    setFocus('work')
-                    break
-                }
-                case project.current: {
-                    setFocus('project') 
-                    break
-                }
-                case education.current: {
-                    setFocus('education')
-                    break
-                }
-                default: 
+        switch (scrollItem) {
+            case resume.current: {
+                setShowNavBar(false)
+                break
             }
-        })
+            case work.current: {
+                setFocus('work')
+                break
+            }
+            case project.current: {
+                setFocus('project') 
+                break
+            }
+            case education.current: {
+                setFocus('education')
+                break
+            }
+            default: 
+        }
     }
 
     /** Callback function for Scrolling out Elements */
     function scrollItemOutCb(scrollItem) {
-        scrollItem.childNodes.forEach((child) => {
-            if (child === resume.current) setShowNavBar(true)
-        })
+        if (scrollItem === resume.current) setShowNavBar(true)
     }
 
     return (
 
-        <div id='about' className=''>
+        <div id='experience-page' className=''>
             
             <ScrollWindow scrollItemInCb={scrollItemInCb} scrollItemOutCb={scrollItemOutCb}>
                 
-                <SlideItem className={'tw-h-[120vh]  tw-scroll-mb-[-20vh]'}>
-                    <div className='resume tw-relative' id='resume' ref={resume}>
-                        <p className='tw-text-3xl tw-px-56 tw-text-center tw-leading-relaxed'> 
+                <ScrollItem  ref={resume} className={'resume tw-scroll-mb-[-20vh]'}>
+                    <div id='resume' className=' tw-relative tw-flex tw-justify-center tw-items-center tw-flex-col tw-mt-[-15vh]'>
+                        <div className='tw-text-xl tw-px-56 tw-text-center tw-leading-relaxed'> 
                             Currently graduated from my <b> Master/Engineer </b> Degree, 
                             <br/>I am looking for a job opportunity as
                             <b> Front-end developer & Software developer </b>
-                        </p>
-                        <div className=' tw-mt-10 tw-flex tw-flex-col tw-items-center'>
-                            <p className=' tw-text-lg tw-mb-3 tw-text-red-500'> Download my Resume </p>
-                            <button className=' tw-button' onClick={null} type='button'> 
-                               👉  Download  👈
-                            </button>
                         </div>
-                        <HiOutlineChevronDoubleDown className=' tw-text-5xl tw-absolute tw-bottom-10'/>
+                        <div className='tw-text-sm  tw-mt-10 tw-flex tw-flex-col tw-items-center'>
+                            <p className='tw-mb-3 tw-text-red-500'> Download my Resume </p>
+                            <a className='tw-button' href={require("../assets/file/cv.pdf")} download> 
+                               👉  Download  👈
+                            </a>
+                        </div>
+                        <HiOutlineChevronDoubleDown className=' tw-text-2xl tw-absolute tw-bottom-10'/>
                     </div>
-                </SlideItem>
+                </ScrollItem>
 
-                <SlideItem className={'tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div className='work ' id='work' ref={work}>
-                        
-                        <h1 className='tw-mt-10 tw-font-bold'> Work Experience </h1> 
+                <ScrollItem ref={work} className={'work tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div id='work' >
+                        <h1> Work Experience </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['work'].map((item, index) => {
                                 return (
-                                    <SlideItem key={index}>
+                                    <ScrollItem key={index}>
                                         <InfoCard info={item} key={index}/>
-                                    </SlideItem>
+                                    </ScrollItem>
                                 ) 
                             })
                         }
                         </ScrollWindow>
                     </div>
-                </SlideItem>
+                </ScrollItem>
 
-                <SlideItem className={'tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div className='project ' id='project' ref={project}>
-                        
-                        <h1 className='tw-mt-10 tw-font-bold'> Project </h1> 
+                <ScrollItem ref={project} className={'project tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div id='project'>
+                        <h1> Project </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['project'].map((item, index) => {
                                 return (
-                                    <SlideItem key={index}>
+                                    <ScrollItem key={index}>
                                         <InfoCard info={item} key={index}/>
-                                    </SlideItem>
+                                    </ScrollItem>
                                 ) 
                             })
                         }
                         </ScrollWindow>
                     </div>
-                </SlideItem>
+                </ScrollItem>
 
-                <SlideItem className={'tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div className='education' id='education' ref={education}>
-                        <h1 className='tw-mt-10 tw-font-bold'> Educations </h1> 
+                <ScrollItem ref={education} className={'education tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div id='education'>
+                        <h1> Educations </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['education'].map((item, index) => {
                                 return (
-                                    <SlideItem key={index}>
+                                    <ScrollItem key={index}>
                                         <InfoCard info={item} key={index}/>
-                                    </SlideItem>
+                                    </ScrollItem>
                                 )
                             })
                         }
                         </ScrollWindow>
-                        
                     </div>
-                </SlideItem>
+                </ScrollItem>
                 
             </ScrollWindow>
 
