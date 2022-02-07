@@ -13,28 +13,18 @@ export const ScrollItem = React.forwardRef( ({children, className=""}, ref) => {
         </div>
     )
 })
-export default function ScrollWindow({ children, className="", size="full", direction="Y", scrollItemOutCb, scrollItemInCb }) {
+export default function ScrollWindow({ children, className="", size="full", scrollItemOutCb, scrollItemInCb }) {
     
     const scrollWindow = useRef(null)
 
-    useEffect(() => {
-        onScroll();
-        
-        scrollWindow.current.addEventListener('scroll', onScroll);
-            
-        // return () => {
-        //     scrollWindow.current.removeEventListener('scroll', onScroll);
-        // }
-    }, []);
+    useEffect(() => {   
+        /** On Scroll Event handler */
+        function onScroll() {
+            const scrollItems = scrollWindow.current.querySelectorAll(".scroll-item");
     
-    /** On Scroll Event handler */
-    function onScroll() {
-        const scrollItems = scrollWindow.current.querySelectorAll(".scroll-item");
-
-        scrollItems.forEach((item) => {
-
-            let slideBCR = item.getBoundingClientRect();
-            if (direction==="Y") {
+            scrollItems.forEach((item) => {
+    
+                let slideBCR = item.getBoundingClientRect();
                 if (slideBCR.top > THRESHOLD_BOT || slideBCR.bottom < THRESHOLD_TOP) {
                     /* If element is scrolling down out */
                     item.classList.remove('scroll-in');
@@ -46,12 +36,20 @@ export default function ScrollWindow({ children, className="", size="full", dire
                     item.classList.add('scroll-in');
                     if (scrollItemInCb) scrollItemInCb(item)
                 }
-            }
-        })
-    }
+            })
+        }
+        onScroll();
+        
+        scrollWindow.current.addEventListener('scroll', onScroll);
+            
+        // return () => {
+        //     scrollWindow.current.removeEventListener('scroll', onScroll);
+        // }
+    }, [scrollItemOutCb, scrollItemInCb]);
+    
 
     return (
-        <div className={`scroll-window ${size} ${direction} ` + className} ref={scrollWindow}>
+        <div className={`scroll-window ${size}` + className} ref={scrollWindow}>
             { children }
         </div>
     )
