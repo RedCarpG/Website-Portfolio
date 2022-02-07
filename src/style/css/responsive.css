@@ -5,24 +5,24 @@
 @media only screen and (min-width: 1199px) {
 
 	html {
-		font-size: 35px;
+		font-size: 25px;
 	}
 	#mainNav {
-		font-size: 25px
+		font-size: 15px
 	}
 
 	.slide-window {
-    	--slide-size: 45vw;
+    	--slide-size: 40vw;
 	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
 	html {
-		font-size: 35px;
+		font-size: 25px;
 	}
 	#mainNav {
-		font-size: 25px
+		font-size: 15px
 	}
 	.slide-window {
     	--slide-size: 55vw;
@@ -36,7 +36,7 @@
 	}
 
 	#mainNav {
-		font-size: 20px
+		font-size: 15px
 	}
 	#experience-page .sideNavBar {
 		display: none;

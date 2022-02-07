@@ -54,12 +54,12 @@ export default function Project() {
                     <PageContent title={"Web Demo Project"}>
                         <SlideWindow slideInCb={slideInCb} slideOutCb={slideOutCb}>
                             <SlideItem className='tictactoe'>
-                                <section className='tw-flex tw-flex-col tw-text-center tw-gap-5 tw-items-center'>
+                                <section className=''>
                                     <h2> Tic Tac Toe </h2>
                                     <ClickImage src={TicTacToe} alt='Tic Tac Toe' />
                                     <div>
-                                        <p className='tw-text-xl tw-mb-2'>Tools used: </p>
-                                        <ul className='tw-text-sm'> 
+                                        <p className=''>Tools used: </p>
+                                        <ul className=''> 
                                             <li> HTML / CSS / JavaScript </li>
                                             <li> ReactJS </li>
                                             <li> Figma </li>
@@ -68,7 +68,7 @@ export default function Project() {
                                             <li><a href="https://github.com/RedCarpG/JavaScript-Game-TicTacToe/tree/v_html" target="_blank" rel="noreferrer"> <FaGithub /> </a></li>
                                         </ul>
                                     </div>
-                                    <a className='tw-button tw-w-auto tw-text-base' href="https://redcarpg.github.io/JavaScript-Game-TicTacToe/" target="_blank" rel="noreferrer"> Try it out in web browser</a>
+                                    <a className='tw-button tw-w-auto tw-text-[.7em] tw-p-[1em]' href="https://redcarpg.github.io/JavaScript-Game-TicTacToe/" target="_blank" rel="noreferrer"> Try it out in web browser</a>
                                 </section>
                             </SlideItem>
                         </SlideWindow>
@@ -79,12 +79,12 @@ export default function Project() {
                     <PageContent title={"Other Mini Projects"}>
                         <SlideWindow slideInCb={slideInCb} slideOutCb={slideOutCb}>
                             <SlideItem className=''>
-                                <section className='tw-flex tw-flex-col tw-text-center tw-gap-5 tw-items-center'>                          
+                                <section className=''>                          
                                     <h2> Lost Viking </h2>
                                     <ClickImage  src={LostViking} alt='Lost Viking'/>
                                     <div>
-                                        <p className='tw-text-xl'>Tools used: </p>
-                                        <ul className='tw-text-sm'> 
+                                        <p className=''>Tools used: </p>
+                                        <ul className=''> 
                                             <li> Python </li>
                                             <li> Pygame </li>
                                             <li> Aseprite </li>
@@ -97,12 +97,12 @@ export default function Project() {
                                 </section>
                             </SlideItem>
                             <SlideItem className=''>
-                                <section className='tw-flex tw-flex-col tw-text-center tw-gap-5 tw-items-center'>                          
+                                <section className=''>                          
                                     <h2> BeBarBall </h2>
                                     <ClickImage  src={BeBarBall} alt='BeBarBall'/>
                                     <div>
-                                        <p className='tw-text-xl'> Tools used: </p>
-                                        <ul className='tw-text-sm'> 
+                                        <p className=''> Tools used: </p>
+                                        <ul className=''> 
                                             <li> Python </li>
                                             <li> Pygame </li>
                                         </ul>
