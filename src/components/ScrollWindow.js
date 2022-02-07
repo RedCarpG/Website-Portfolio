@@ -1,10 +1,18 @@
-import './ScrollWindow.scss'
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import './ScrollWindow.scss'
 
 const THRESHOLD_TOP = window.innerHeight/2
 const THRESHOLD_BOT = window.innerHeight/2
 
+export const ScrollItem = React.forwardRef( ({children, className=""}, ref) => {
+
+    return (
+        <div className={`scroll-item ${className}`} ref={ref}>
+            {children}
+        </div>
+    )
+})
 export default function ScrollWindow({ children, className="", size="full", direction="Y", scrollItemOutCb, scrollItemInCb }) {
     
     const scrollWindow = useRef(null)
@@ -14,35 +22,36 @@ export default function ScrollWindow({ children, className="", size="full", dire
         
         scrollWindow.current.addEventListener('scroll', onScroll);
             
-        return () => {
-            scrollWindow.current.removeEventListener('scroll', onScroll);
-        }
+        // return () => {
+        //     scrollWindow.current.removeEventListener('scroll', onScroll);
+        // }
     }, []);
     
     /** On Scroll Event handler */
     function onScroll() {
-        const slideItems = scrollWindow.current.querySelectorAll(".slide-item");
+        const scrollItems = scrollWindow.current.querySelectorAll(".scroll-item");
 
-        slideItems.forEach((item) => {
+        scrollItems.forEach((item) => {
 
             let slideBCR = item.getBoundingClientRect();
-            if (slideBCR.top > THRESHOLD_BOT || slideBCR.bottom < THRESHOLD_TOP) {
-                /* If element is scrolling down out */
-                item.classList.remove('slide-up');
-                item.classList.add('slide-down');
-                if (scrollItemOutCb) scrollItemOutCb(item)
-            } else {
-                /* If element is scrolling up in */
-                item.classList.remove('slide-down');
-                item.classList.add('slide-up');
-                if (scrollItemInCb) scrollItemInCb(item)
+            if (direction==="Y") {
+                if (slideBCR.top > THRESHOLD_BOT || slideBCR.bottom < THRESHOLD_TOP) {
+                    /* If element is scrolling down out */
+                    item.classList.remove('scroll-in');
+                    item.classList.add('scroll-out');
+                    if (scrollItemOutCb) scrollItemOutCb(item)
+                } else {
+                    /* If element is scrolling up in */
+                    item.classList.remove('scroll-out');
+                    item.classList.add('scroll-in');
+                    if (scrollItemInCb) scrollItemInCb(item)
+                }
             }
-
         })
     }
 
     return (
-        <div className={`scroll-window ${size} ${direction}` + className} ref={scrollWindow}>
+        <div className={`scroll-window ${size} ${direction} ` + className} ref={scrollWindow}>
             { children }
         </div>
     )
