@@ -4,14 +4,14 @@ import Experience from './pages/Experience'
 import Layout from './pages/Layout'
 import Project from './pages/Project';
 import {
-  BrowserRouter,
+  HashRouter ,
   Routes,
   Route,
 } from "react-router-dom";
 
 export default function App() {
   return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={ <Layout /> }>
             <Route index element={ <Home/> } />
@@ -19,6 +19,6 @@ export default function App() {
             <Route path="project" element={ <Project/> } />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
   );
 }

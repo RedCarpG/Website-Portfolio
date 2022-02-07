@@ -1,14 +1,17 @@
 {
-  "name": "web-personal-website",
+  "name": "web-portfolio",
   "version": "0.1.0",
   "private": true,
+
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss ./src/style/style.css -o ./src/index.css --config ./config/",
-    "watch:css": "postcss ./src/style/style.css -o ./src/index.css --config ./config/  --watch"
+    "watch:css": "postcss ./src/style/style.css -o ./src/index.css --config ./config/  --watch",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -57,5 +60,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+
+  "author": "RedCarpG <redcarpg@gmail.com> (http://redcarpg.github.io/)",
+  
+  "license": "(MIT OR Apache-2.0)"
 }

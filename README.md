@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Website-Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Preview the project on the webpage: [Portfolio Website](https://redcarpg.github.io/Website-Portfolio/)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+-----------------------------
 
-### `npm start`
+This is my personally designed Portfolio website.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![img](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/WebsitePortfolio.png?raw=true)
+![img](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/WebsitePortfolio2.png?raw=true)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔮 Overview of the files
 
-### `npm test`
+-----------------------------
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+|   |   |
+| --------------------------------- |   --------------------------------- |
+|                       |                                                                       |
+|  📂 `build`           | Built deployment folder                                               |
+|  📂 `config`          | Configuration files for `PostCss` and `TailwindCss`                   |
+|  📂 `public`          | Public static web files                                               |
+|  -> 📃 `index.html`   | Index html root file                                                  |
+|  📂 `src`             | Folder to store source code and files                                 |
+|  -> 📂 `assets`       | Assets as images, svgs, etc.                                          |
+|  -> 📂 `components`   | Stores each React Component                                           |
+|  -> 📂 `pages`        | Stores each router page                                               |
+|  -> 📂 `style`        | Stylesheet folder stores overall styles and Tailwind imports, etc.    |
+|  -> 📃 `App.js`       | React Application of the project                                      |
+|  -> 📃 `index.js`     | Entry file of the web app                                             |
+|  -> 📃 `index.css`    | Generated .css stylesheet from `style` folder                         |
+|                       |                                                                       |
 
-### `npm run build`
+### Built File size
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+|               |           |           |                           |
+| -----         | -----     | -----     | -----                     |
+| **Total**     | JS        | CSS       | Media(Images/SVGs/etc.)   |
+| **10 MB**     | 3.11 MB   | 68.4 KB   | 6.99 M                    |
+|               |           |           |                           |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💡 Design
 
-### `npm run eject`
+-----------------------------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ♦ **SVG**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+SVGs are designed using the tools from website **[Figma](https://www.figma.com/)**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+|     |     |
+| --  | --  |
+| ![svg design](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/SVGDesign.svg?raw=true)
+|     |     |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### ✒ **Font**
 
-## Learn More
+For font, I'm using **[Cairo](https://fonts.google.com/specimen/Cairo?query=Cairo)** and **[Supermercado One](https://fonts.google.com/specimen/Supermercado+One?query=Supermercado+One)** from [Google Font](https://fonts.google.com/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🍦 **Icons**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Small Icons from Font Awesome from [React Icons](https://react-icons.github.io/react-icons/)
 
-### Code Splitting
+## 🔧 Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-----------------------------
 
-### Analyzing the Bundle Size
+- `JavaScript` / `HTML` / `CSS`
+- [ReactJS](https://reactjs.org/) (JS Front-End framework)
+- [TailwindCSS](https://tailwindcss.com/) / [PostCSS](https://postcss.org/) (Stylesheet framworks)
+- [Scroll Magic](https://scrollmagic.io/) (Scroll Animations)
+- [GSAP](https://greensock.com/gsap/) (Animation)
+- [Figma](https://www.figma.com/) (SVG Design)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 💁‍♂️ Author
 
-### Making a Progressive Web App
+-----------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [LinkedIn](https://www.linkedin.com/in/peng-gao-fr/) - GP
+- [Github](https://github.com/RedCarpG) - RedCarpG
