@@ -16,6 +16,7 @@
     }
 
     .tw-button {
-        @apply tw-bg-red-600 tw-text-gray-50 tw-text-xl tw-px-8 tw-py-4 tw-rounded-2xl tw-cursor-pointer;
+        @apply tw-bg-red-600 tw-text-gray-50 tw-px-8 tw-py-4 tw-rounded-2xl tw-cursor-pointer
+        tw-duration-100 hover:tw-scale-110 tw-select-none;
     }
 }
