@@ -62,8 +62,8 @@ export default function Home() {
                 <Cloud ref={cloud4} className={"svg-cloud"}/>
                 <Mountain3 ref={mount3} className={"svg-mount3"}/>
                 <Cloud ref={cloud5} className={"svg-cloud"}/>
-                <span className='name gao' ref={gao}> Gao </span>
-                <span className='name peng' ref={peng}> Peng </span>
+                <h1 className='name gao' ref={gao}> Gao </h1>
+                <h1 className='name peng' ref={peng}> Peng </h1>
                 <Cloud ref={cloud6} className={"svg-cloud"}/>
                 <Mountain2 ref={mount2} className={"svg-mount2"}/>
                 <Bird ref={bird1} className={"svg-bird"}/>
@@ -254,7 +254,7 @@ export default function Home() {
 
                         <Timeline 
                             target={ <> 
-                                <h1 className=' tw-text-zinc-800 tw-text-[3rem] tw-pl-[64vw] tw-pr-[2vw] tw-pt-[15vh] tw-pb-[60vh] tw-flex tw-justify-center tw-items-center'> 
+                                <h1 className=' tw-text-zinc-800 tw-text-[4vmin] tw-pl-[64vw] tw-pr-[5vw] tw-pt-[15vh] tw-pb-[60vh] tw-flex tw-justify-center tw-items-center'> 
                                     Feel free to contact me. 
                                 </h1>
                             </>}
@@ -302,7 +302,7 @@ export default function Home() {
                         />  
                         <Timeline 
                             target={ <> 
-                                <h1 className='tw-text-zinc-800 tw-text-[3rem] tw-pt-[70vh] '> Welcome to my Portfolio Website </h1>
+                                <h1 className='tw-text-zinc-800 tw-text-[7vmin] tw-pt-[70vh] '> Welcome to my Portfolio Website </h1>
                             </>}
                             position={"stage2"}
                         >

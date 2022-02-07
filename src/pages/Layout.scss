@@ -1,19 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
-
-@font-face {
-    font-family: "TitleFont";
-    src: url("../assets/font/BrushStrokes-q6B5.ttf");
-}
-
-
-@font-face {
-    font-family: "SecondaryFont";
-    src: url("../assets/font/WasteboneDemo-eZPOl.ttf");
-}
-
 
 body {
 
@@ -23,10 +9,6 @@ body {
     
     font-family: 'Cairo', sans-serif;
 
-    &::-webkit-scrollbar {
-        // width: 0;
-    }
-    
     h1 {
         font-family: 'Supermercado One', cursive;
     }

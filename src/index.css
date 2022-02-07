@@ -1,6 +1,6 @@
-/* @import "./css/responsive.css"; */
-/* @import "./css/style.css"; */
-/* ! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
+*/
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -579,6 +579,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-pt-10 {
   padding-top: 2.5rem;
 }
+.tw-pr-\[5vw\] {
+  padding-right: 5vw;
+}
 .tw-text-center {
   text-align: center;
 }
@@ -609,6 +612,48 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-text-\[\.7em\] {
   font-size: .7em;
+}
+.tw-text-\[5vh\] {
+  font-size: 5vh;
+}
+.tw-text-\[5vw\] {
+  font-size: 5vw;
+}
+.tw-text-\[2vw\] {
+  font-size: 2vw;
+}
+.tw-text-\[4vw\] {
+  font-size: 4vw;
+}
+.tw-text-\[4vmin\] {
+  font-size: 4vmin;
+}
+.tw-text-\[3vmin\] {
+  font-size: 3vmin;
+}
+.tw-text-\[5vmin\] {
+  font-size: 5vmin;
+}
+.tw-text-\[10vmin\] {
+  font-size: 10vmin;
+}
+.tw-text-\[8vmin\] {
+  font-size: 8vmin;
+}
+.tw-text-\[7vmin\] {
+  font-size: 7vmin;
+}
+.tw-text-\[20vmin\] {
+  font-size: 20vmin;
+}
+.tw-text-\[16vmin\] {
+  font-size: 16vmin;
+}
+.tw-text-\[30vmin\] {
+  font-size: 30vmin;
+}
+.tw-text-\[40vmin\] {
+  font-size: 40vmin;
 }
 .tw-leading-relaxed {
   line-height: 1.625;
