@@ -5,15 +5,15 @@ import './ScrollWindow.scss'
 const THRESHOLD_TOP = window.innerHeight/2
 const THRESHOLD_BOT = window.innerHeight/2
 
-export const ScrollItem = React.forwardRef( ({children, className=""}, ref) => {
 
+export const ScrollItem = React.forwardRef( ({children, className="", ...rest}, ref) => {
     return (
-        <div className={`scroll-item ${className}`} ref={ref}>
+        <div className={`scroll-item ${className}`} ref={ref} {...rest}>
             {children}
         </div>
     )
 })
-export default function ScrollWindow({ children, className="", size="full", scrollItemOutCb, scrollItemInCb }) {
+export default function ScrollWindow({ children, scrollItemOutCb, scrollItemInCb, size="full", className="", ...rest}) {
     
     const scrollWindow = useRef(null)
 
@@ -42,14 +42,11 @@ export default function ScrollWindow({ children, className="", size="full", scro
         
         scrollWindow.current.addEventListener('scroll', onScroll);
             
-        // return () => {
-        //     scrollWindow.current.removeEventListener('scroll', onScroll);
-        // }
     }, [scrollItemOutCb, scrollItemInCb]);
     
 
     return (
-        <div className={`scroll-window ${size}` + className} ref={scrollWindow}>
+        <div className={`scroll-window ${size}` + className} ref={scrollWindow} {...rest}>
             { children }
         </div>
     )

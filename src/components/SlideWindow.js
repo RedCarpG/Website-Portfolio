@@ -2,13 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import './SlideWindow.scss'
 import { FaAngleRight, FaAngleLeft} from 'react-icons/fa'
 
-const THRESHOLD_LEFT = window.innerWidth/2
-const THRESHOLD_RIGHT = window.innerWidth/2
-
-export const SlideItem = React.forwardRef( ({children, className=""}, ref) => {
+export const SlideItem = React.forwardRef( ({children, className="", ...rest}, ref) => {
 
     return (
-        <div className={`slide-item ${className}`} ref={ref}>
+        <div className={`slide-item ${className}`} ref={ref} {...rest}>
             {children}
         </div>
     )
@@ -27,14 +24,16 @@ function Index({ count, index }) {
     )
 }
 
-export default function SlideWindow({ children, slideInCb, slideOutCb, className="" }) {
+export default function SlideWindow({ children, slideInCb, slideOutCb, className="", ...rest}) {
 
     const slideWindow = useRef(null)
     const [index, setIndex] = useState(0)
     const [count, setCount] = useState(0)
+
     useEffect(() => {
         setCount(slideWindow.current.childNodes.length - 3)
     }, []);
+
     useEffect(() => {
         slideWindow.current.childNodes.forEach((each) => {
             each.classList.remove("active")
@@ -42,23 +41,24 @@ export default function SlideWindow({ children, slideInCb, slideOutCb, className
         })
         slideWindow.current.childNodes[index+1].classList.add("active")
         if(slideInCb) slideInCb(index, slideWindow.current.childNodes[index+1])
+        console.log(slideWindow.current.childNodes[index+1].offsetLeft)
     }, [index, slideInCb, slideOutCb])
 
     /** On Scroll Event handler */
 
     function onClickLeft(el) {
         if (index <= 0) return
-        slideWindow.current.scrollLeft -=THRESHOLD_LEFT
+        slideWindow.current.scrollLeft -= window.innerWidth/2
         setIndex((currentIndex) => currentIndex-1)
     }
     function onClickRight(el) {
         if (index >= count) return
-        slideWindow.current.scrollLeft +=THRESHOLD_RIGHT
+        slideWindow.current.scrollLeft += window.innerWidth/2
         setIndex((currentIndex) => currentIndex+1)
     }
 
     return (<>
-        <div className={`slide-window ` + className} >
+        <div className={`slide-window ` + className} {...rest}>
             <div className='window' ref={slideWindow}>
                 <SlideItem/>
                 { children }
