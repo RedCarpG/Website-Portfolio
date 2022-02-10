@@ -3,11 +3,11 @@ import './Experience.scss'
 import ScrollWindow, { ScrollItem } from '../components/ScrollWindow'
 import experienceJson from '../assets/json/experience.json'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
-import SideNavBar from '../components/SideNavBar'
+import SideNavBar, { SideNavLinkMain, SideNavLinkMinor } from '../components/SideNavBar'
 
 function InfoCard({ info }) {
     return (
-        <section id={info.id}>
+        <section>
             <p className='id'> {info.id} 
                 <span className='tw-text-zinc-300'>{info.sup && ` - ${info.sup}`}</span> 
             </p>
@@ -39,7 +39,7 @@ export default function Experience() {
     const work = useRef(null)
     const project = useRef(null)
     const education = useRef(null)
-    const [currentFocus, setFocus] = useState('resume')
+    const [currentIndex, setIndex] = useState(0)
     const [showNavBar, setShowNavBar] = useState(false)
 
     /** Callback function for current Scrolling in / focused Element */
@@ -47,18 +47,19 @@ export default function Experience() {
         switch (scrollItem) {
             case resume.current: {
                 setShowNavBar(false)
+                setIndex(0)
                 break
             }
             case work.current: {
-                setFocus('work')
+                setIndex(1)
                 break
             }
             case project.current: {
-                setFocus('project') 
+                setIndex(2) 
                 break
             }
             case education.current: {
-                setFocus('education')
+                setIndex(3)
                 break
             }
             default: 
@@ -76,8 +77,8 @@ export default function Experience() {
             
             <ScrollWindow scrollItemInCb={scrollItemInCb} scrollItemOutCb={scrollItemOutCb}>
                 
-                <ScrollItem  ref={resume} className={'resume tw-scroll-mb-[-20vh]'}>
-                    <div id='resume' className=' tw-relative tw-flex tw-justify-center tw-items-center tw-flex-col tw-mt-[-15vh]'>
+                <ScrollItem id='resume' ref={resume} className={'resume tw-scroll-mb-[-20vh]'}>
+                    <div className=' tw-relative tw-flex tw-justify-center tw-items-center tw-flex-col tw-mt-[-15vh]'>
                         <div className='tw-text-xl tw-px-56 tw-text-center tw-leading-relaxed'> 
                             Currently graduated from my <b> Master/Engineer </b> Degree, 
                             <br/>I am looking for a job opportunity as
@@ -93,14 +94,14 @@ export default function Experience() {
                     </div>
                 </ScrollItem>
 
-                <ScrollItem ref={work} className={'work tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div id='work' >
+                <ScrollItem id='work' ref={work} className={'work tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div>
                         <h1> Work Experience </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['work'].map((item, index) => {
                                 return (
-                                    <ScrollItem key={index}>
+                                    <ScrollItem id={item.id} key={index}>
                                         <InfoCard info={item} key={index}/>
                                     </ScrollItem>
                                 ) 
@@ -110,14 +111,14 @@ export default function Experience() {
                     </div>
                 </ScrollItem>
 
-                <ScrollItem ref={project} className={'project tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div id='project'>
+                <ScrollItem id='project' ref={project} className={'project tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div>
                         <h1> Project </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['project'].map((item, index) => {
                                 return (
-                                    <ScrollItem key={index}>
+                                    <ScrollItem  id={item.id} key={index}>
                                         <InfoCard info={item} key={index}/>
                                     </ScrollItem>
                                 ) 
@@ -127,14 +128,14 @@ export default function Experience() {
                     </div>
                 </ScrollItem>
 
-                <ScrollItem ref={education} className={'education tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
-                    <div id='education'>
+                <ScrollItem id='education' ref={education} className={'education tw-bg-zinc-900 tw-bg-opacity-80 tw-text-zinc-300'}>
+                    <div>
                         <h1> Educations </h1> 
                         <ScrollWindow size='small'>
                         {
                             experienceJson['education'].map((item, index) => {
                                 return (
-                                    <ScrollItem key={index}>
+                                    <ScrollItem  id={item.id} key={index}>
                                         <InfoCard info={item} key={index}/>
                                     </ScrollItem>
                                 )
@@ -146,47 +147,35 @@ export default function Experience() {
                 
             </ScrollWindow>
 
-            <SideNavBar show={showNavBar} currentFocus={`nav-${currentFocus}`}>
-                <li className='nav-resume' data-index={0}> <h1> <a href='#resume' rel='internal'> RESUME </a> </h1></li>
-                <li className='nav-work' data-index={1}> <h1> <a href='#work' rel='internal'> WORK </a> </h1>
-                    <ul className={'tw-text-zinc-400'} >
+            <SideNavBar show={showNavBar} currentIndex={currentIndex}>
+                <SideNavLinkMain title={"RESUME"} targetID='resume' index={0}/>
+                <SideNavLinkMain title={"WORK"} targetID='work' index={1}>
                     {
                         experienceJson['work'].map((item, index) => {
                             return (
-                                <li key={index}>
-                                <a href={`#${item.id}`} rel='internal'> {item.id} </a> 
-                                </li>
+                                <SideNavLinkMinor targetID={item.id} title={item.id} key={index}/>
                             ) 
                         })
                     }
-                    </ul>
-                </li>
-                <li className='nav-project' data-index={2}> <h1> <a href='#project' rel='internal'> PROJECT </a> </h1>
-                    <ul className={'tw-text-zinc-400'}>
+                </SideNavLinkMain>
+                <SideNavLinkMain title={"PROJECT"} targetID='project' index={2}>
                     {
                         experienceJson['project'].map((item, index) => {
                             return (
-                                <li key={index}>
-                                <a href={`#${item.id}`} rel='internal'> {item.id} </a> 
-                                </li>
+                                <SideNavLinkMinor targetID={item.id} title={item.id} key={index}/>
                             ) 
                         })
                     }
-                    </ul>
-                </li>
-                <li className='nav-education' data-index={3}> <h1>  <a href='#education' rel='internal'> EDUCATION </a> </h1>        
-                    <ul className={'tw-text-zinc-400'} >
+                </SideNavLinkMain>
+                <SideNavLinkMain title={"EDUCATION"} targetID='education' index={3}>
                     {
                         experienceJson['education'].map((item, index) => {
                             return (
-                                <li key={index}>
-                                    <a href={`#${item.id}`} rel='internal'> {item.id} </a> 
-                                </li>
+                                <SideNavLinkMinor targetID={item.id} title={item.id} key={index}/>
                             ) 
                         })
                     }
-                    </ul>
-                </li>
+                </SideNavLinkMain>
             </SideNavBar>
 
         </div>
