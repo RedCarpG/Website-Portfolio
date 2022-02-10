@@ -1,10 +1,42 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 import "./SideNavBar.scss"
 
-export default function SideNavBar({ show, currentFocus, children}) {
+function scrollTo(el) {
+    el.parentElement.scrollTo({
+        top: el.offsetTop
+    })
+}
+
+
+export function SideNavLinkMinor({ targetID, title }){
+    return (
+        <li>
+            <h2>
+                <button onClick={(e) => {
+                    scrollTo(document.getElementById(targetID))
+                }}> {title}  </button> 
+            </h2>
+        </li>
+    )
+}
+
+export function SideNavLinkMain({ targetID, title, index, children=null}) {
+    
+    return (
+        <li id={`nav-${targetID}`} data-index={index}>
+            <h1> 
+                <button onClick={(e) => {
+                    scrollTo(document.getElementById(targetID))
+                }}> {title}  </button> 
+            </h1>
+            { children && <ul> {children} </ul> }
+        </li>
+    )
+}
+
+export default function SideNavBar({ show, currentIndex, children}) {
     
     const navBarList = useRef(null)
-    const [currentIndex, setIndex] = useState(0)
 
     /** Side effect every time current focused Element changes */
     useEffect(() => {
@@ -13,21 +45,17 @@ export default function SideNavBar({ show, currentFocus, children}) {
             navBarList.current.childNodes.forEach((each) => {
                 each.classList.remove('focus')
             })
-            navBarList.current.querySelector(`.${currentFocus}`).classList.add('focus')
+            // console.log(navBarList.current.querySelector(`#${currentFocus}`))
+            navBarList.current.childNodes[currentIndex].classList.add('focus')
+            // navBarList.current.querySelector(`#${currentFocus}`).classList.add('focus')
         }
         const moveCenter = () => {
             if (!navBarList) return
-            let index = navBarList.current.querySelector(`.${currentFocus}`).dataset.index
-            setIndex(index)
-            navBarList.current.style.setProperty('--offset', `${index}`);
+            // let index = navBarList.current.childNodes[currentIndex].dataset.index
+            // let index = navBarList.current.querySelector(`#${currentFocus}`).dataset.index
+            // setIndex(index)
+            navBarList.current.style.setProperty('--offset', `${currentIndex}`);
         }
-
-        moveCenter()
-        focusItem()
-    }, [currentFocus])
-
-    useEffect(() => {
-
         const changeOpacity = () => {
             if (!navBarList) return
             let items = navBarList.current.childNodes
@@ -37,10 +65,11 @@ export default function SideNavBar({ show, currentFocus, children}) {
                 each.style.setProperty('--size', `${100 - Math.abs(currentIndex - eachIndex) * 20}%`);
             })
         }
+
         changeOpacity()
-
+        moveCenter()
+        focusItem()
     }, [currentIndex])
-
 
     return (
         <div className={`sideNavBar tw-text-zinc-200 ${show ? 'show':''}`}>
