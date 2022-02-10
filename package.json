@@ -11,6 +11,7 @@
     "eject": "react-scripts eject",
     "build:css": "postcss ./src/style/style.css -o ./src/index.css --config ./config/",
     "watch:css": "postcss ./src/style/style.css -o ./src/index.css --config ./config/  --watch",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
