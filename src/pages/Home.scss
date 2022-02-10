@@ -14,6 +14,7 @@ body {
         background: rgba(0, 0, 0, .7);
     }
 }
+
 #home-page {
 
     section {
@@ -25,6 +26,7 @@ body {
 
     .animation {
         h1 {
+            user-select: none;
             position: fixed;
             left: 0;
             right: 0;
@@ -47,6 +49,7 @@ body {
         }
         
         svg {
+            user-select: none;
             position: fixed;
             margin: auto auto;
             top: 0;
