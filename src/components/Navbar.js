@@ -1,26 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Navbar.scss'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar({ onClickConatct }) {
     
-    const [pageActive, setPageActive] = useState("home")
     const [contactActive, setContactActive] = useState(false)
-
-    const getActivePage = useCallback((pageName) => {
-        if (pageActive === pageName) {
-            return "active"
-        }
-        return ""
-    }, [pageActive])
-    const onClickPage = useCallback((pageName) => {
-        setPageActive(pageName)
-        if (contactActive) {
-            setContactActive(!contactActive)
-            onClickConatct(null) 
-        }
-    }, [contactActive, onClickConatct])
 
     return (
         <nav id='mainNav' className='' >
@@ -31,23 +16,23 @@ export default function Navbar({ onClickConatct }) {
                     <i className='fa fa-bars' />
                 </button>
                 <ul>
-                    <li className={getActivePage("home")}>
-                        <Link to="/" onClick={()=>{onClickPage("home")}}> Home </Link>
-                    </li>
-                    <li className={getActivePage("experience")}>
-                        <Link to="/experience"  onClick={()=>{onClickPage("experience")}}> Experience </Link>
-                    </li>
-                    <li className={getActivePage("project")}>
-                        <Link to="/project" onClick={()=>{onClickPage("project")}}> 
-                            Project 
-                        </Link>
+                    <li>
+                        <NavLink  to="/"> Home </NavLink >
                     </li>
                     <li>
-                        <button className={contactActive?"active":""} href='' 
-                        onClick={ (e) => { 
-                            setContactActive(!contactActive) 
-                            onClickConatct(e) 
-                        }}> 
+                        <NavLink  to="/experience"> Experience </NavLink >
+                    </li>
+                    <li>
+                        <NavLink  to="/project"> Project </NavLink >
+                    </li>
+                    <li>
+                        <button 
+                            className={contactActive?"active":""}
+                            onClick={ (e) => { 
+                                setContactActive(!contactActive) 
+                                onClickConatct(e) 
+                            }}
+                        > 
                             Contact 
                         </button>
                     </li>
