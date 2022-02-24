@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.af8ae521.css",
-    "main.js": "./static/js/main.940a0273.js",
+    "main.css": "./static/css/main.48970833.css",
+    "main.js": "./static/js/main.54b5ecdf.js",
     "static/media/banner0.jpg": "./static/media/banner0.9cea9676ca0a686d3067.jpg",
     "static/media/tictactoe.png": "./static/media/tictactoe.b3a1c266f0022b12fc18.png",
     "static/media/art0.jpg": "./static/media/art0.3f50c2e702e7695254d9.jpg",
@@ -11,11 +11,14 @@
     "static/media/Frame.jpg": "./static/media/Frame.903a6028f309eb34d7f9.jpg",
     "static/media/banner4.jpg": "./static/media/banner4.b6c3cbbf1de4e9de9b8a.jpg",
     "static/media/banner2.jpg": "./static/media/banner2.fff343093c6fd71e7b3d.jpg",
-    "static/media/cv.pdf": "./static/media/cv.f790ba056b2bbd1f7ed9.pdf",
+    "static/media/cv.pdf": "./static/media/cv.90d41e65c51c4eaa59f1.pdf",
     "static/media/post0.jpg": "./static/media/post0.87a81fb96343fd0fd892.jpg",
     "static/media/LostViking.png": "./static/media/LostViking.3388a7d84294f2d5c97c.png",
     "static/media/post1.jpg": "./static/media/post1.ed89ae65dc6f671d8335.jpg",
     "static/media/post3.jpg": "./static/media/post3.9df0413b5829a3a9e7a6.jpg",
+    "static/media/Victoria.png": "./static/media/Victoria.9a76008e93948aa61288.png",
+    "static/media/OUC.png": "./static/media/OUC.a095efa6d002417e8f60.png",
+    "static/media/Nantes.png": "./static/media/Nantes.8e8f779787c9f5d4ebef.png",
     "static/media/Mountain1.svg": "./static/media/Mountain1.ed7eb6dc68dc88de935376a98626a47b.svg",
     "static/media/Mountain2.svg": "./static/media/Mountain2.9cc207520dfa78db03506f731fc3e84a.svg",
     "static/media/Mountain4.svg": "./static/media/Mountain4.a056be800b5ca5991d94c98b4ef1291d.svg",
@@ -24,11 +27,11 @@
     "static/media/Bird.svg": "./static/media/Bird.a54a9026e113e0c04d508dc6792b037d.svg",
     "static/media/Cloud.svg": "./static/media/Cloud.605e1ae39ee7aa15b712069249832524.svg",
     "static/media/Sun.svg": "./static/media/Sun.73607756ce2bbeb2f74115423e8bfe46.svg",
-    "main.af8ae521.css.map": "./static/css/main.af8ae521.css.map",
-    "main.940a0273.js.map": "./static/js/main.940a0273.js.map"
+    "main.48970833.css.map": "./static/css/main.48970833.css.map",
+    "main.54b5ecdf.js.map": "./static/js/main.54b5ecdf.js.map"
   },
   "entrypoints": [
-    "static/css/main.af8ae521.css",
-    "static/js/main.940a0273.js"
+    "static/css/main.48970833.css",
+    "static/js/main.54b5ecdf.js"
   ]
 }
