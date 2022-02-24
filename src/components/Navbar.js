@@ -1,12 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Navbar.scss'
 import { NavLink } from "react-router-dom";
 
-export default function Navbar({ onClickConatct }) {
+export default function Navbar({ onClickConatct, contactActive }) {
     
-    const [contactActive, setContactActive] = useState(false)
-
     return (
         <nav id='mainNav' className='' >
             <div className='tw-container tw-text-lg'> GAO PENG </div>
@@ -29,7 +27,6 @@ export default function Navbar({ onClickConatct }) {
                         <button 
                             className={contactActive?"active":""}
                             onClick={ (e) => { 
-                                setContactActive(!contactActive) 
                                 onClickConatct(e) 
                             }}
                         > 

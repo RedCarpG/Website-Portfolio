@@ -56,13 +56,5 @@
     .social {
         position: absolute;
         bottom: 10vh;
-        
-        .social-btn > * {
-            transition-duration: .5s;
-            &:hover {
-
-                transform: scale(130%);
-            }
-        }
     }
 }

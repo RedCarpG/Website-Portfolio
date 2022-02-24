@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
@@ -6,22 +6,16 @@ import './Layout.scss'
 
 export default function Layout() {
     
+    const [contactActive, setContactActive] = useState(false)
 
-    let switchContactVisibleCb = null
-    function setContactVisibleCb(cb) {
-      switchContactVisibleCb = cb
-    }
-  
-    function onClickConatct() {
-      if (switchContactVisibleCb) {
-        switchContactVisibleCb()
-      }
+    function ToggleConatctVisible() {
+      setContactActive((contactActive) => !contactActive)
     }
     return (
         <>
-            <Navbar onClickConatct={onClickConatct} />
+            <Navbar onClickConatct={ToggleConatctVisible} contactActive={contactActive} />
             <Outlet />
-            <Contact switchVisibleCb={setContactVisibleCb}/>
+            <Contact contactActive={contactActive} onToggleVisible={ToggleConatctVisible}/>
         </>
     )
 }
