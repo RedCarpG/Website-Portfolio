@@ -398,6 +398,11 @@ function Footer() {
             <div>
                 <h1 className='tw-mb-5'> About this project </h1>
                 <div> I will keep on updating this project before it's fully finished </div>
+                    
+                <div className='tw-flex tw-justify-center tw-gap-2 tw-items-center'> 
+                    Visit Github repository of this project: 
+                    <a className=' tw-items-center tw-content-center' href="https://github.com/RedCarpG/Website-Portfolio" target="_blank" rel="noreferrer"> <FaGithub /> </a>
+                </div>
                 <div className='tools tw-flex tw-flex-col tw-justify-center tw-mt-5'>
                     <h2 className='tw-mb-2'> Tools used: </h2>
                     <ul> 
