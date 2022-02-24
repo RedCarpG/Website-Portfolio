@@ -8,6 +8,10 @@ import SideNavBar, { SideNavLinkMain, SideNavLinkMinor } from '../components/Sid
 function InfoCard({ info }) {
     return (
         <section>
+            {
+                info.bg_img && 
+                <img class="bg_img" src={[require(`../assets/img/experience/${info.bg_img}`)]} alt={info.bg_img}/>
+            }
             <p className='id'> {info.id} 
                 <span className='tw-text-zinc-300'>{info.sup && ` - ${info.sup}`}</span> 
             </p>
@@ -26,8 +30,8 @@ function InfoCard({ info }) {
             {/* {info.description && <p className='description'> {info.description} </p>} */}
 
             <div className='bottom'>
-                {info.startDate && <p className='period tw-text-zinc-400'> {`${info.startDate} - ${info.endDate}`} </p>}
-                {info.location && <p className='location tw-text-zinc-400'> {info.location} </p>}
+                {info.startDate && <p className='period tw-text-zinc-200'> {`${info.startDate} - ${info.endDate}`} </p>}
+                {info.location && <p className='location tw-text-zinc-200'> {info.location} </p>}
             </div>
         </section>
     )
