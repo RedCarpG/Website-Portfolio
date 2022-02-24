@@ -1,25 +1,20 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import { CSSTransition } from 'react-transition-group'
 import { FaPaste, FaGithub, FaLinkedin } from 'react-icons/fa'
 import "./Contact.scss"
 
-
-export default function Contact( {switchVisibleCb} ) {
-    const [visible, setVisible] = useState(false)
-
-    useEffect(() => {
-        switchVisibleCb(() => {setVisible(!visible)})
-    }, [switchVisibleCb, visible])
+export default function Contact( {contactActive, onToggleVisible} ) {
 
     return (
         <CSSTransition
-          in={visible}
+          in={contactActive}
           timeout={0}
           classNames="hidden"
           unmountOnExit
         >
             <div id="contact-page" className="contact-page cover-page">
-                <div className="tw-flex tw-flex-col tw-items-center tw-w-full">
+                <div className=" tw-absolute tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-z-0" onClick={onToggleVisible}></div>
+                <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-z-10">
                     
                     <p className="tw-text-2xl"> Contact me </p> 
                     <div className="email-box tw-mt-[-2rem]"> 

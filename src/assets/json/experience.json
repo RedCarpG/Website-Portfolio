@@ -50,7 +50,8 @@
             "startDate": "October 2019",
             "endDate": "June 2020",
             "location": "Nantes, Loire-Atlantique, France",
-            "skill": ["Arduino", "Embedded System", "C", "WiFi / BT"]
+            "skill": ["Arduino", "Embedded System", "C", "WiFi / BT"],
+            "bg_img": "Victoria.png"
         }
 
     ],
@@ -63,7 +64,8 @@
             "endDate": "October 2021",
             "location": "Nantes, Loire-Atlantique, France",
             "skill": ["Multimedia and Deep Learning on GPU", "Database", "IoT and communication networks", "Parallel programming on multi-core CPU", 
-                "Java", "Digital Signal Processing", "......"]
+                "Java", "Digital Signal Processing", "......"],
+            "bg_img": "Nantes.png"
         }, 
         {
             "id": "OUC",
@@ -72,7 +74,8 @@
             "startDate": "September 2015",
             "endDate": "Jun 2019",
             "location": "Qingdao, Shandong, China",
-            "skill": [ "C", "C++", "Database", "Data Structure", "Analog Circuit", "Digital Circuit", "Digital Signal Processing", "FPGA", "VHDL", "......"]
+            "skill": [ "C", "C++", "Database", "Data Structure", "Analog Circuit", "Digital Circuit", "Digital Signal Processing", "FPGA", "VHDL", "......"],
+            "bg_img": "OUC.png"
         }
     ]
 }

@@ -62,7 +62,7 @@
             font-size: .7rem;
             // padding-top: 1rem;
             // padding-bottom: 1rem;
-            position: relative;            
+            position: relative;          
             
             .id {
                 color: var(--secondaryColor);
@@ -118,6 +118,15 @@
             }
         }
     
+    }
+
+    img.bg_img {
+        z-index: -1;
+        position: absolute;
+        // bottom: 0;
+        top: 40%;
+        max-width: 80%;
+        // opacity: 70%;
     }
 
     .sideNavBar {
