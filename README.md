@@ -58,7 +58,7 @@ SVGs are designed using the tools from website **[Figma](https://www.figma.com/)
 
 |     |     |
 | --  | --  |
-| ![svg design](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/SVGDesign.jpg?raw=true)
+| ![svg design](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/SVGDesign.jpg?raw=true) | ![svg design](https://github.com/RedCarpG/DOCS/blob/main/website_portfolio/BGDesign.png?raw=true) |
 |     |     |
 
 ### ✒ **Font**
