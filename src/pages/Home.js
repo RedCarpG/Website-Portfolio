@@ -10,6 +10,7 @@ import { ReactComponent as Mountain1 } from "../assets/svg/Mountain1.svg"
 import { ReactComponent as Bird } from "../assets/svg/Bird.svg"
 import { ReactComponent as Cloud } from "../assets/svg/Cloud.svg"
 import { FaGithub, FaLinkedin, FaRegEnvelope, FaAngleDown } from "react-icons/fa"
+import { NavLink } from "react-router-dom"
 
 export default function Home() {
     const AnimTargets = forwardRef((props, ref) => {
@@ -391,10 +392,12 @@ export default function Home() {
     )
 }
 
-
 function Footer() {
     return (    
         <>
+            <div> 
+                Please refer to the pages <NavLink to="/experience">Experience</NavLink> and <NavLink to="/project"> Project </NavLink> for more information about me.
+            </div>
             <div>
                 <h1 className='tw-mb-5'> About this project </h1>
                 <div> I will keep on updating this project before it's fully finished </div>
@@ -406,7 +409,7 @@ function Footer() {
                 <div className='tools tw-flex tw-flex-col tw-justify-center tw-mt-5'>
                     <h2 className='tw-mb-2'> Tools used: </h2>
                     <ul> 
-                        <li> JavaScript / HTML / CSS </li>
+                        <li> JavaScript/ TypeScript / HTML / CSS </li>
                         <li> React JS </li>
                         <li> Tailwind CSS / PostCss </li>
                         <li> Scroll Magic </li>
