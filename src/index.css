@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -457,9 +457,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-relative {
   position: relative;
 }
-.tw-bottom-10 {
-  bottom: 2.5rem;
-}
 .tw-top-0 {
   top: 0px;
 }
@@ -471,6 +468,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-right-0 {
   right: 0px;
+}
+.tw-bottom-10 {
+  bottom: 2.5rem;
 }
 .tw-z-0 {
   z-index: 0;
@@ -492,9 +492,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-mb-5 {
   margin-bottom: 1.25rem;
-}
-.tw-ml-3 {
-  margin-left: 0.75rem;
 }
 .tw-mt-5 {
   margin-top: 1.25rem;
@@ -552,9 +549,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-gap-3 {
   gap: 0.75rem;
 }
-.tw-gap-1 {
-  gap: 0.25rem;
-}
 .tw-gap-2 {
   gap: 0.5rem;
 }
@@ -565,10 +559,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-bg-zinc-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
-}
-.tw-bg-cyan-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
 }
 .tw-bg-opacity-80 {
   --tw-bg-opacity: 0.8;
@@ -675,13 +665,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 /******************************************
     Version: 1.0
 /****************************************** */
-@media only screen and (min-width: 1199px) {
+@media only screen and (min-width: 1799px) {
 
 	html {
-		font-size: 25px;
+		font-size: 35px;
 	}
 	#mainNav {
-		font-size: 15px
+		font-size: 25px
+	}
+
+	.slide-window {
+		--slide-size: 40vw;
+	}
+}
+@media only screen and (min-width: 1199px) and (max-width: 1799px) {
+
+	html {
+		font-size: 30px;
+	}
+	#mainNav {
+		font-size: 20px
 	}
 
 	.slide-window {
