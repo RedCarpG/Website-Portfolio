@@ -3,6 +3,7 @@
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    overflow-x: hidden;
     transition: .5s;
     transition-delay: .1s;
     transition-property: all;
@@ -36,7 +37,6 @@
             background-color: inherit;
         }
         &:hover {
-            overflow: auto;
             &::-webkit-scrollbar-thumb {
                 width: .1rem;
                 background-color: white;
