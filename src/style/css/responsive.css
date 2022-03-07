@@ -2,13 +2,27 @@
     Version: 1.0
 /****************************************** */
 
-@media only screen and (min-width: 1199px) {
+@media only screen and (min-width: 1799px) {
 
 	html {
-		font-size: 25px;
+		font-size: 35px;
 	}
 	#mainNav {
-		font-size: 15px
+		font-size: 25px
+	}
+
+	.slide-window {
+		--slide-size: 40vw;
+	}
+}
+
+@media only screen and (min-width: 1199px) and (max-width: 1799px) {
+
+	html {
+		font-size: 30px;
+	}
+	#mainNav {
+		font-size: 20px
 	}
 
 	.slide-window {

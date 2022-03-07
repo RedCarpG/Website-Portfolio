@@ -88,7 +88,6 @@ body {
         animation: jump 1s infinite alternate;
     }
 
-
 }
 
 footer {
@@ -99,10 +98,10 @@ footer {
     text-align: center;
     position: fixed;
     top: 100vh;
-    gap: 2em;
     left: 0;
     right: 0;
     padding: 2em;
+    padding-top: 5em;
     color: rgb(244 244 245);
     height: 100vh;
     background-color: rgb(63 63 70);
@@ -120,6 +119,10 @@ footer {
         li {
             line-height: 1.75em;
         }
+    }
+
+    a {
+        color: var(--secondaryColor);
     }
 
     .icon {

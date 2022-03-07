@@ -1,10 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import './Navbar.scss'
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
 export default function Navbar({ onClickConatct, contactActive }) {
     
+    function onClickPage(e) {
+        if( contactActive ) onClickConatct(e) 
+    }
+
     return (
         <nav id='mainNav' className='' >
             <div className='tw-container tw-text-lg'> GAO PENG </div>
@@ -15,18 +19,18 @@ export default function Navbar({ onClickConatct, contactActive }) {
                 </button>
                 <ul>
                     <li>
-                        <NavLink  to="/"> Home </NavLink >
+                        <NavLink to="/" onClick={onClickPage}> Home </NavLink>
                     </li>
                     <li>
-                        <NavLink  to="/experience"> Experience </NavLink >
+                        <NavLink to="/experience" onClick={onClickPage}> Experience </NavLink>
                     </li>
                     <li>
-                        <NavLink  to="/project"> Project </NavLink >
+                        <NavLink to="/project" onClick={onClickPage}> Project </NavLink>
                     </li>
                     <li>
                         <button 
-                            className={contactActive?"active":""}
-                            onClick={ (e) => { 
+                            className={contactActive ? "active" : ""}
+                            onClick={(e) => { 
                                 onClickConatct(e) 
                             }}
                         > 
