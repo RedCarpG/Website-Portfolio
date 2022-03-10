@@ -5,12 +5,30 @@ import experienceJson from '../assets/json/experience.json'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
 import SideNavBar, { SideNavLinkMain, SideNavLinkMinor } from '../components/SideNavBar'
 
-function InfoCard({ info }) {
+interface Info {
+    id: string,
+    title?: string, 
+    description?: string[],
+    sup?: string,
+    fullname?: string[] | string,
+    project?: string,
+    skill?: string[],
+    startDate?: string,
+    endDate?: string,
+    location?: string,
+    bg_img?: string,
+}
+
+type InfoCardProps = {
+    info: Info
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({ info }) => {
     return (
         <section>
             {
                 info.bg_img && 
-                <img class="bg_img" src={[require(`../assets/img/experience/${info.bg_img}`)]} alt={info.bg_img}/>
+                <img className="bg_img" src={require(`../assets/img/experience/${info.bg_img}`)} alt={info.bg_img}/>
             }
             <p className='id'> {info.id} 
                 <span className='tw-text-zinc-300'>{info.sup && ` - ${info.sup}`}</span> 
@@ -37,17 +55,17 @@ function InfoCard({ info }) {
     )
 }
 
-export default function Experience() {
+const Experience: React.FC = () => {
 
-    const resume = useRef(null)
-    const work = useRef(null)
-    const project = useRef(null)
-    const education = useRef(null)
+    const resume = useRef<HTMLDivElement>(null)
+    const work = useRef<HTMLDivElement>(null)
+    const project = useRef<HTMLDivElement>(null)
+    const education = useRef<HTMLDivElement>(null)
     const [currentIndex, setIndex] = useState(0)
     const [showNavBar, setShowNavBar] = useState(false)
 
     /** Callback function for current Scrolling in / focused Element */
-    function scrollItemInCb(scrollItem) {
+    function scrollItemInCb(scrollItem: Element) {
         switch (scrollItem) {
             case resume.current: {
                 setShowNavBar(false)
@@ -71,7 +89,7 @@ export default function Experience() {
     }
 
     /** Callback function for Scrolling out Elements */
-    function scrollItemOutCb(scrollItem) {
+    function scrollItemOutCb(scrollItem: Element) {
         if (scrollItem === resume.current) setShowNavBar(true)
     }
 
@@ -122,7 +140,7 @@ export default function Experience() {
                         {
                             experienceJson['project'].map((item, index) => {
                                 return (
-                                    <ScrollItem  id={item.id} key={index}>
+                                    <ScrollItem id={item.id} key={index}>
                                         <InfoCard info={item} key={index}/>
                                     </ScrollItem>
                                 ) 
@@ -139,7 +157,7 @@ export default function Experience() {
                         {
                             experienceJson['education'].map((item, index) => {
                                 return (
-                                    <ScrollItem  id={item.id} key={index}>
+                                    <ScrollItem id={item.id} key={index}>
                                         <InfoCard info={item} key={index}/>
                                     </ScrollItem>
                                 )
@@ -185,3 +203,4 @@ export default function Experience() {
         </div>
     )
 }
+export default Experience

@@ -1,15 +1,18 @@
+import React from 'react'
 import ScrollWindow, { ScrollItem } from '../components/ScrollWindow'
 import SlideWindow, { SlideItem } from '../components/SlideWindow'
 import ClickImage from '../components/ClickImage'
-import TicTacToe from '../assets/img/projects/tictactoe.png'
-import LostViking from '../assets/img/projects/LostViking.png'
-import BeBarBall from '../assets/img/projects/BeBarBall.png'
 import { FaGithub } from 'react-icons/fa'
 import './Project.scss'
 
-function PageContent({ children, title }) {
+
+type PageContentProps = {
+    title?: string
+}
+const PageContent: React.FC<PageContentProps> = (
+    { children, title }
+) => {
     return (
-        
         <div className='tw-flex tw-flex-col tw-justify-center tw-items-center tw-pt-10'>
             <h1> {title} </h1>
             { children }
@@ -17,31 +20,32 @@ function PageContent({ children, title }) {
     )
 }
 
-export default function Project() {
+const Project: React.FC = () => {
     /** Callback function for current Scrolling in / focused Element */
-    function scrollItemInCb(scrollItem) {
-        scrollItem.childNodes.forEach((child) => {
-            switch (child) {
-                default: 
-            }
-        })
+    function scrollItemInCb(scrollItem: HTMLElement) {
+        // const childrenElements = scrollItem.children as any as Array<HTMLElement>
+        // childrenElements.forEach((child) => {
+        //     switch (child) {
+        //         default: 
+        //     }
+        // })
     }
 
     /** Callback function for Scrolling out Elements */
-    function scrollItemOutCb(scrollItem) {
-        scrollItem.childNodes.forEach((child) => {
-            // if (child === resume.current) setShowNavBar(true)
-        })
+    function scrollItemOutCb(scrollItem: HTMLElement) {
+        // scrollItem.childNodes.forEach((child) => {
+        //     if (child === resume.current) setShowNavBar(true)
+        // })
     }
 
     /** Callback function for current Scrolling in / focused Element */
-    function slideInCb(index, item) {
+    function slideInCb(index: number, item: HTMLElement) {
         const img = item.querySelector('.clickImage')
         if(img) img.classList.add('active')
     }
 
     /** Callback function for Scrolling out Elements */
-    function slideOutCb(index, item) {
+    function slideOutCb(index: number, item: HTMLElement) {
         const img = item.querySelector('.clickImage')
         if(img) img.classList.remove('active')
     }
@@ -56,7 +60,7 @@ export default function Project() {
                             <SlideItem className='tictactoe'>
                                 <section className=''>
                                     <h2> Tic Tac Toe </h2>
-                                    <ClickImage src={TicTacToe} alt='Tic Tac Toe' />
+                                    <ClickImage src={require("../assets/img/projects/tictactoe.png")} alt='Tic Tac Toe' />
                                     <div>
                                         <p className=''>Tools used: </p>
                                         <ul className=''> 
@@ -81,7 +85,7 @@ export default function Project() {
                             <SlideItem className=''>
                                 <section className=''>                          
                                     <h2> Lost Viking </h2>
-                                    <ClickImage  src={LostViking} alt='Lost Viking'/>
+                                    <ClickImage  src={require("../assets/img/projects/LostViking.png")} alt='Lost Viking'/>
                                     <div>
                                         <p className=''>Tools used: </p>
                                         <ul className=''> 
@@ -99,7 +103,7 @@ export default function Project() {
                             <SlideItem className=''>
                                 <section className=''>                          
                                     <h2> BeBarBall </h2>
-                                    <ClickImage  src={BeBarBall} alt='BeBarBall'/>
+                                    <ClickImage  src={require("../assets/img/projects/BeBarBall.png")} alt='BeBarBall'/>
                                     <div>
                                         <p className=''> Tools used: </p>
                                         <ul className=''> 
@@ -131,7 +135,7 @@ export default function Project() {
                                 <ClickImage  src={require("../assets/img/projects/post3.jpg")} alt='post3'/>
                             </SlideItem>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/art0.jpg")]} alt='art0'/>
+                                <ClickImage  src={require("../assets/img/projects/art0.jpg")} alt='art0'/>
                             </SlideItem>
                         </SlideWindow>
                     </PageContent>
@@ -140,19 +144,19 @@ export default function Project() {
                     <PageContent title={"E-commercial Design Portfolio"}>
                         <SlideWindow slideInCb={slideInCb} slideOutCb={slideOutCb}>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/banner0.jpg")]} alt='banner0'/>
+                                <ClickImage  src={require("../assets/img/projects/banner0.jpg")} alt='banner0'/>
                             </SlideItem>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/banner1.jpg")]} alt='banner1'/>
+                                <ClickImage  src={require("../assets/img/projects/banner1.jpg")} alt='banner1'/>
                             </SlideItem>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/banner2.jpg")]} alt='banner2'/>
+                                <ClickImage  src={require("../assets/img/projects/banner2.jpg")} alt='banner2'/>
                             </SlideItem>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/banner3.jpg")]} alt='banner3'/>
+                                <ClickImage  src={require("../assets/img/projects/banner3.jpg")} alt='banner3'/>
                             </SlideItem>
                             <SlideItem className=''>
-                                <ClickImage  src={[require("../assets/img/projects/banner4.jpg")]} alt='banner4'/>
+                                <ClickImage  src={require("../assets/img/projects/banner4.jpg")} alt='banner4'/>
                             </SlideItem>
                         </SlideWindow>
                     </PageContent>
@@ -162,3 +166,5 @@ export default function Project() {
         </div>
     )
 }
+
+export default Project

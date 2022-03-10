@@ -1,5 +1,5 @@
 import './Home.scss'
-import { useRef, forwardRef, useImperativeHandle } from 'react'
+import React, { useRef, forwardRef, useImperativeHandle } from 'react'
 import { Controller, Scene } from 'react-scrollmagic'
 import { Tween, Timeline } from 'react-gsap'
 import { ReactComponent as Sun } from "../assets/svg/Sun.svg"
@@ -12,8 +12,8 @@ import { ReactComponent as Cloud } from "../assets/svg/Cloud.svg"
 import { FaGithub, FaLinkedin, FaRegEnvelope, FaAngleDown } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
 
-export default function Home() {
-    const AnimTargets = forwardRef((props, ref) => {
+const Home: React.FC = () => {
+    const AnimeTargets = forwardRef((props, ref) => {
         const bg = useRef(null);
         const sun = useRef(null);
         const cloudSun1 = useRef(null);
@@ -92,7 +92,7 @@ export default function Home() {
                             </div>
                         }
                         target={
-                            <AnimTargets/>
+                            <AnimeTargets/>
                         }
                         duration={2000}
                         labels={[
@@ -392,11 +392,11 @@ export default function Home() {
     )
 }
 
-function Footer() {
+const Footer: React.FC = () => {
     return (    
         <>
             <div> 
-                Please refer to the pages <NavLink to="/experience">Experience</NavLink> and <NavLink to="/project"> Project </NavLink> for more information about me.
+                Go to the <NavLink to="/experience">Experience</NavLink> page and <NavLink to="/project"> Project </NavLink> page to know me more.
             </div>
             <div>
                 <h1 className='tw-mb-5'> About this project </h1>
@@ -429,3 +429,5 @@ function Footer() {
         </>
     )
 }
+
+export default Home
