@@ -34,8 +34,8 @@ Tested on:
 |  -> 📂 `components`   | Stores each React Component                                           |
 |  -> 📂 `pages`        | Stores each router page                                               |
 |  -> 📂 `style`        | Stylesheet folder stores overall styles and Tailwind imports, etc.    |
-|  -> 📃 `App.js`       | React Application of the project                                      |
-|  -> 📃 `index.js`     | Entry file of the web app                                             |
+|  -> 📃 `App.tsx`      | React Application of the project                                      |
+|  -> 📃 `index.tsx`    | Entry file of the web app                                             |
 |  -> 📃 `index.css`    | Generated .css stylesheet from `style` folder                         |
 |                       |                                                                       |
 
@@ -73,7 +73,7 @@ Small Icons from Font Awesome from [React Icons](https://react-icons.github.io/r
 
 -----------------------------
 
-- `JavaScript` / `HTML` / `CSS`
+- `JavaScript` / `TypeScript` / `HTML` / `CSS`
 - [ReactJS](https://reactjs.org/) (JS Front-End framework)
 - [TailwindCSS](https://tailwindcss.com/) / [PostCSS](https://postcss.org/) (Stylesheet framworks)
 - [Scroll Magic](https://scrollmagic.io/) (Scroll Animations)
