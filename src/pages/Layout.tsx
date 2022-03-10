@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import Navbar from '../components/Navbar'
-import Contact from '../components/Contact'
+import Contact from './Contact'
 import './Layout.scss'
 
-export default function Layout() {
+const Layout: React.FC = () => {
     
     const [contactActive, setContactActive] = useState(false)
-
-    function ToggleConatctVisible() {
+    function ToggleContactPage() {
       setContactActive((contactActive) => !contactActive)
     }
+
     return (
         <>
-            <Navbar onClickConatct={ToggleConatctVisible} contactActive={contactActive} />
+            <Navbar contactActive={contactActive} onToggleContactPage={ToggleContactPage}/>
             <Outlet />
-            <Contact contactActive={contactActive} onToggleVisible={ToggleConatctVisible}/>
+            <Contact contactActive={contactActive} onToggleContactPage={ToggleContactPage}/>
         </>
     )
 }
 
-Layout.propTypes = {
-}
+export default Layout

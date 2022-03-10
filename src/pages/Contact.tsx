@@ -3,7 +3,14 @@ import { CSSTransition } from 'react-transition-group'
 import { FaPaste, FaGithub, FaLinkedin } from 'react-icons/fa'
 import "./Contact.scss"
 
-export default function Contact( {contactActive, onToggleVisible} ) {
+type ContactProps = {
+    contactActive: boolean,
+    onToggleContactPage: () => void
+}
+
+const Contact: React.FC<ContactProps> = ( 
+    {contactActive, onToggleContactPage}
+) => {
 
     return (
         <CSSTransition
@@ -13,7 +20,8 @@ export default function Contact( {contactActive, onToggleVisible} ) {
           unmountOnExit
         >
             <div id="contact-page" className="contact-page cover-page">
-                <div className=" tw-absolute tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-z-0" onClick={onToggleVisible}></div>
+                <div className=" tw-absolute tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-z-0" 
+                    onClick={() => {onToggleContactPage()}}></div>
                 <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-z-10">
                     
                     <p className="tw-text-2xl"> Contact me </p> 
@@ -42,3 +50,4 @@ export default function Contact( {contactActive, onToggleVisible} ) {
         </CSSTransition>
     )
 }
+export default Contact

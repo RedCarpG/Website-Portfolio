@@ -1,12 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { MouseEventHandler } from 'react'
 import './Navbar.scss'
 import { NavLink } from "react-router-dom"
 
-export default function Navbar({ onClickConatct, contactActive }) {
+type NavBarProps = {
+    onToggleContactPage: () => void,
+    contactActive: boolean
+}
+
+const Navbar: React.FC<NavBarProps> = (
+    { contactActive, onToggleContactPage }
+) => {
     
-    function onClickPage(e) {
-        if( contactActive ) onClickConatct(e) 
+    const onClickLink: MouseEventHandler<HTMLAnchorElement> = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        if( contactActive ) onToggleContactPage() 
     }
 
     return (
@@ -19,20 +25,18 @@ export default function Navbar({ onClickConatct, contactActive }) {
                 </button>
                 <ul>
                     <li>
-                        <NavLink to="/" onClick={onClickPage}> Home </NavLink>
+                        <NavLink to="/" onClick={onClickLink}> Home </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/experience" onClick={onClickPage}> Experience </NavLink>
+                        <NavLink to="/experience" onClick={onClickLink}> Experience </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/project" onClick={onClickPage}> Project </NavLink>
+                        <NavLink to="/project" onClick={onClickLink}> Project </NavLink>
                     </li>
                     <li>
                         <button 
                             className={contactActive ? "active" : ""}
-                            onClick={(e) => { 
-                                onClickConatct(e) 
-                            }}
+                            onClick={() => {onToggleContactPage()}}
                         > 
                             Contact 
                         </button>
@@ -42,6 +46,4 @@ export default function Navbar({ onClickConatct, contactActive }) {
         </nav>
     )
 }
-Navbar.prototype = {
-    onClickConatct: PropTypes.func
-}
+export default Navbar
