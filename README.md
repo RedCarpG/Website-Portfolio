@@ -44,7 +44,7 @@ Tested on:
 |               |           |           |                           |
 | -----         | -----     | -----     | -----                     |
 | **Total**     | JS        | CSS       | Media(Images/SVGs/etc.)   |
-| **10 MB**     | 3.11 MB   | 68.4 KB   | 6.99 M                    |
+| **10 MB**     | 3.13 MB   | 68.4 KB   | 7.15 M                    |
 |               |           |           |                           |
 
 
