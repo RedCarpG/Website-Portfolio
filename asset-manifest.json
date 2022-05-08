@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.7de0c371.css",
-    "main.js": "./static/js/main.d9ab248d.js",
+    "main.js": "./static/js/main.87d15b1e.js",
     "static/media/banner0.jpg": "./static/media/banner0.9cea9676ca0a686d3067.jpg",
     "static/media/tictactoe.png": "./static/media/tictactoe.b3a1c266f0022b12fc18.png",
     "static/media/art0.jpg": "./static/media/art0.3f50c2e702e7695254d9.jpg",
@@ -12,9 +12,9 @@
     "static/media/banner4.jpg": "./static/media/banner4.b6c3cbbf1de4e9de9b8a.jpg",
     "static/media/banner2.jpg": "./static/media/banner2.fff343093c6fd71e7b3d.jpg",
     "static/media/cv.pdf": "./static/media/cv.554cb16a22143282d27d.pdf",
+    "static/media/LostViking.png": "./static/media/LostViking.e4d3345a2373b5926782.png",
     "static/media/post0.jpg": "./static/media/post0.87a81fb96343fd0fd892.jpg",
     "static/media/chatroom.png": "./static/media/chatroom.6514ddc17bbcfaf9f747.png",
-    "static/media/LostViking.png": "./static/media/LostViking.3388a7d84294f2d5c97c.png",
     "static/media/post1.jpg": "./static/media/post1.ed89ae65dc6f671d8335.jpg",
     "static/media/post3.jpg": "./static/media/post3.9df0413b5829a3a9e7a6.jpg",
     "static/media/Victoria.png": "./static/media/Victoria.9a76008e93948aa61288.png",
@@ -29,10 +29,10 @@
     "static/media/Cloud.svg": "./static/media/Cloud.605e1ae39ee7aa15b712069249832524.svg",
     "static/media/Sun.svg": "./static/media/Sun.73607756ce2bbeb2f74115423e8bfe46.svg",
     "main.7de0c371.css.map": "./static/css/main.7de0c371.css.map",
-    "main.d9ab248d.js.map": "./static/js/main.d9ab248d.js.map"
+    "main.87d15b1e.js.map": "./static/js/main.87d15b1e.js.map"
   },
   "entrypoints": [
     "static/css/main.7de0c371.css",
-    "static/js/main.d9ab248d.js"
+    "static/js/main.87d15b1e.js"
   ]
 }
